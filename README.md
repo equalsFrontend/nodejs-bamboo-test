@@ -1,1 +1,1 @@
-readme
+Configs for testing bamboo automation

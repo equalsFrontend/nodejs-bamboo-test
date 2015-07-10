@@ -1,6 +1,5 @@
 .sass-cache
 .idea
-node_modules
 js
 images
 fonts
@@ -9,7 +8,6 @@ locale
 scripts
 scss
 test
-bower_components
 acceleration-freinage.php
 co2.php
 faq.php
