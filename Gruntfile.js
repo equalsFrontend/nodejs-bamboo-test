@@ -1,28 +1,26 @@
 module.exports = function (grunt) {
 
-    console.log("try!");
+    var tasksFile, tasks,
+        bowerFile, bowerDeps = [];
 
-    //var tasksFile, tasks,
-    //    bowerFile, bowerDeps = [];
-    //
-    //tasksFile = grunt.file.readJSON('Grunttasks.json');
-    //bowerDepsFile = grunt.file.readJSON('bower.json');
-    //
-    //tasks = tasksFile;
-    //bowerDeps = [      //THIS MUST MATCH THE FILE LIST IN karma.conf.js
-    //    'bower_components/jquery/dist/jquery.js',
-    //    'bower_components/underscore/underscore.js',
-    //    'test/**/*Spec.js',
-    //    'test/**/*Src.js'
-    //];
-    //
-    //tasks["pkg"] = grunt.file.readJSON('package.json');
-    //tasks["bowerDeps"] = {
-    //    'jsFilesForTesting': bowerDeps
-    //};
-    //
-    //grunt.initConfig(tasks);
-    //
+    tasksFile = grunt.file.readJSON('Grunttasks.json');
+    bowerDepsFile = grunt.file.readJSON('bower.json');
+
+    tasks = tasksFile;
+    bowerDeps = [      //THIS MUST MATCH THE FILE LIST IN karma.conf.js
+        'bower_components/jquery/dist/jquery.js',
+        'bower_components/underscore/underscore.js',
+        'test/**/*Spec.js',
+        'test/**/*Src.js'
+    ];
+
+    tasks["pkg"] = grunt.file.readJSON('package.json');
+    tasks["bowerDeps"] = {
+        'jsFilesForTesting': bowerDeps
+    };
+
+    grunt.initConfig(tasks);
+
     //grunt.loadNpmTasks('grunt-contrib-uglify');
     //grunt.loadNpmTasks('grunt-contrib-cssmin');
     //grunt.loadNpmTasks('grunt-contrib-concat');
@@ -34,6 +32,7 @@ module.exports = function (grunt) {
     //
     //grunt.registerTask('default',   ['concat', 'karma:development', 'compass', 'cssmin', 'watch']);
     //grunt.registerTask('cleanall',  ['clean:all', 'copy:main']);
-    //grunt.registerTask('test', ['karma:development']);
+
+    grunt.registerTask('default', ['karma:development']);
 
 };
