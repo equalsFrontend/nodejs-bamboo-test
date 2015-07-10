@@ -1,12 +1,12 @@
 module.exports = function (grunt) {
 
-    //var tasksFile, tasks,
-    //    bowerFile, bowerDeps = [];
+    var tasksFile, tasks,
+        bowerFile, bowerDeps = [];
     //
-    //tasksFile = grunt.file.readJSON('Grunttasks.json');
+    tasksFile = grunt.file.readJSON('Grunttasks.json');
     //bowerDepsFile = grunt.file.readJSON('bower.json');
     //
-    //tasks = tasksFile;
+    tasks = tasksFile;
     //bowerDeps = [      //THIS MUST MATCH THE FILE LIST IN karma.conf.js
     //    'bower_components/jquery/dist/jquery.js',
     //    'bower_components/underscore/underscore.js',
@@ -14,12 +14,12 @@ module.exports = function (grunt) {
     //    'test/**/*Src.js'
     //];
     //
-    //tasks["pkg"] = grunt.file.readJSON('package.json');
-    //tasks["bowerDeps"] = {
-    //    'jsFilesForTesting': bowerDeps
-    //};
-    //
-    //grunt.initConfig(tasks);
+    tasks["pkg"] = grunt.file.readJSON('package.json');
+    tasks["bowerDeps"] = {
+        'jsFilesForTesting': bowerDeps
+    };
+    
+    grunt.initConfig(tasks);
     //
     //grunt.loadNpmTasks('grunt-contrib-uglify');
     //grunt.loadNpmTasks('grunt-contrib-cssmin');
@@ -28,8 +28,8 @@ module.exports = function (grunt) {
     //grunt.loadNpmTasks('grunt-contrib-watch');
     //grunt.loadNpmTasks('grunt-contrib-clean');
     //grunt.loadNpmTasks('grunt-contrib-jshint');
-    //grunt.loadNpmTasks('grunt-karma');
-    //
+    grunt.loadNpmTasks('grunt-karma');
+    
     //grunt.registerTask('default',   ['concat', 'karma:development', 'compass', 'cssmin', 'watch']);
     //grunt.registerTask('cleanall',  ['clean:all', 'copy:main']);
     
