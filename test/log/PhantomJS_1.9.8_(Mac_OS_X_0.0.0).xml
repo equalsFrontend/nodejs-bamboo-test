@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<testsuite name="PhantomJS 1.9.8 (Mac OS X 0.0.0)" package="" timestamp="2015-07-10T16:57:17" id="0" hostname="Alexs-MacBook-Pro.local" tests="2" errors="0" failures="1" time="0.002">
+  <properties>
+    <property name="browser.fullName" value="Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/534.34 (KHTML, like Gecko) PhantomJS/1.9.8 Safari/534.34"/>
+  </properties>
+  <testcase name="and it will pass because val is indeed 10" time="0.002" classname="This should pass"/>
+  <testcase name="and it will because 12 should be 10" time="0" classname="This should fail">
+    <failure type="">Expected 10 to be 12.
+</failure>
+  </testcase>
+  <system-out><![CDATA[
+]]></system-out>
+  <system-err/>
+</testsuite>
