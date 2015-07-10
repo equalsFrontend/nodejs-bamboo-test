@@ -8,12 +8,12 @@ describe("This should pass", function() {
     });
 });
 
-describe("This should fail", function() {
-    var a;
-
-    it("and it will because 12 should be 10", function() {
-        a = true;
-
-        expect(val).toBe(12);
-    });
-});
+//describe("This should fail", function() {
+//    var a;
+//
+//    it("and it will because 12 should be 10", function() {
+//        a = true;
+//
+//        expect(val).toBe(12);
+//    });
+//});
