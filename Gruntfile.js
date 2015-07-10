@@ -3,6 +3,7 @@ module.exports = function (grunt) {
     var tasksFile, tasks,
         bowerFile, bowerDeps = [];
 
+    
     tasksFile = grunt.file.readJSON('Grunttasks.json');
     bowerDepsFile = grunt.file.readJSON('bower.json');
 
@@ -14,11 +15,13 @@ module.exports = function (grunt) {
         'test/**/*Src.js'
     ];
 
+
     tasks["pkg"] = grunt.file.readJSON('package.json');
     tasks["bowerDeps"] = {
         'jsFilesForTesting': bowerDeps
     };
 
+    
     grunt.initConfig(tasks);
 
     //grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -28,10 +31,12 @@ module.exports = function (grunt) {
     //grunt.loadNpmTasks('grunt-contrib-watch');
     //grunt.loadNpmTasks('grunt-contrib-clean');
     //grunt.loadNpmTasks('grunt-contrib-jshint');
-    //grunt.loadNpmTasks('grunt-karma');
-    //
+    
+    grunt.loadNpmTasks('grunt-karma');
+    
     //grunt.registerTask('default',   ['concat', 'karma:development', 'compass', 'cssmin', 'watch']);
     //grunt.registerTask('cleanall',  ['clean:all', 'copy:main']);
+
 
     grunt.registerTask('default', ['karma:development']);
 
