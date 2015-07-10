@@ -1,0 +1,191 @@
+{
+  "concat": {
+    "options": {
+      "separator": ";",
+      "banner": "/*\n * <%= pkg.name %> - <%= pkg.description %> (DEBUG) \n * Version: <%= pkg.version %>\n * Compiled On: <%= grunt.template.today('dd-mm-yyyy') %> \n*/\n\n"
+    },
+    "api_target": {
+      "files": {
+        "js/api.min.js": [
+          "js/api/Webservices.js",
+          "js/api/Imetrik.js",
+          "js/api/Graphiques.js",
+          "js/api/maps.js",
+          "js/api/kilometrage.js",
+          "js/api/harshEvent.js",
+          "js/api/timeUse.js",
+          "js/api/typeRoad.js",
+          "js/api/speed.js",
+          "js/api/co2.js",
+          "js/api/drivingLocation.js",
+          "js/api/summary.js",
+          "js/api/profile.js",
+          "js/api/init.js"
+        ]
+      }
+    },
+    "libs_target": {
+      "files": {
+        "js/libs.min.js": [
+          "js/libs/jquery-1.11.2.min.js",
+          "js/libs/bootstrap.js",
+          "js/libs/jquery.selectbox-0.2.min.js",
+          "js/libs/moment.js",
+          "js/libs/device.js",
+          "js/libs/jquery.simplePagination.js",
+          "js/libs/mobiscroll.min.js",
+          "js/libs/daterangepicker.js"
+        ]
+      }
+    }
+  },
+
+
+  "uglify": {
+    "options": {
+      "banner": "/*\n * <%= pkg.name %> - <%= pkg.description %>\n * Version: <%= pkg.version %>\n * Compiled On: <%= grunt.template.today('dd-mm-yyyy') %> \n*/\n\n",
+      "mangle": false
+    },
+    "api_target": {
+      "files": {
+        "js/api.min.js": [
+          "js/api/Webservices.js",
+          "js/api/Imetrik.js",
+          "js/api/Graphiques.js",
+          "js/api/maps.js",
+          "js/api/kilometrage.js",
+          "js/api/harshEvent.js",
+          "js/api/timeUse.js",
+          "js/api/typeRoad.js",
+          "js/api/speed.js",
+          "js/api/co2.js",
+          "js/api/drivingLocation.js",
+          "js/api/summary.js",
+          "js/api/profile.js",
+          "js/api/init.js"
+        ]
+      }
+    },
+    "libs_target": {
+      "files": {
+        "js/libs.min.js": [
+          "js/libs/jquery-1.11.2.min.js",
+          "js/libs/bootstrap.js",
+          "js/libs/jquery.selectbox-0.2.min.js",
+          "js/libs/moment.js",
+          "js/libs/device.js",
+          "js/libs/jquery.simplePagination.js",
+          "js/libs/mobiscroll.min.js",
+          "js/libs/daterangepicker.js"
+        ]
+      }
+    }
+  },
+
+
+  "cssmin": {
+    "dev": {
+      "files": {
+        "css/style.min.css": [
+          "css/bootstrap.min.css",
+          "css/imetrik.css",
+          "css/mobiscroll.min.css",
+          "css/style.css",
+          "css/daterangepicker-bs3.css"
+        ]
+      }
+    }
+  },
+
+
+  "compass": {
+    "dist": {
+      "options": {
+        "sassDir": "scss",
+        "cssDir": "css",
+        "outputStyle": "compact",
+        "noLineComments": true,
+        "debugInfo": false
+      }
+    }
+  },
+
+
+  "watch": {
+    "js": {
+      "files": [
+        "js/api/*.js"
+      ],
+      "tasks": [
+        "concat:api_target"
+      ]
+    },
+    "jsLibs": {
+      "files": [
+        "js/libs/*.js"
+      ],
+      "tasks": [
+        "concat:libs_target"
+      ]
+    },
+    "css": {
+      "files": [
+        "css/style.css"
+      ],
+      "tasks": [
+        "cssmin"
+      ]
+    },
+    "scss": {
+      "files": [
+        "scss/*.scss"
+      ],
+      "tasks": [
+        "compass"
+      ]
+    }
+  },
+
+
+  "clean": {
+    "build": {
+      "src": [
+        ".sass-cache",
+        "sources/images/",
+        "sources/js/"
+      ]
+    },
+    "all": {
+      "src": [
+        ".sass-cache",
+        "sources/images/",
+        "sources/js/"
+      ]
+    },
+    "sass": {
+      "src": [
+        ".sass-cache"
+      ]
+    }
+  },
+
+
+  "karma": {
+    "development": {
+      "configFile": "karma.conf.js",
+      "options": {
+        "files": [
+          "<%= bowerDeps.jsFilesForTesting %>",
+          "test/**/*Src.js"
+        ]
+      }
+    }
+  },
+
+
+  "jshint": {
+    "beforeconcat": [
+      "js/api/*.js"
+    ]
+  }
+}

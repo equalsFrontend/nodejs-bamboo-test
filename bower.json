@@ -1,0 +1,11 @@
+{
+  "name": "Imetrik",
+  "version": "2.0.0",
+  "dependencies": {
+    "jquery": "2.1.4",
+    "underscore": "1.6.0",
+    "polymer": "Polymer/polymer#^0.5",
+    "observe-js": "~0.5.6"
+  },
+  "analytics": false
+}
