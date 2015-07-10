@@ -34,6 +34,7 @@ module.exports = function (grunt) {
     //
     //grunt.registerTask('default',   ['concat', 'karma:development', 'compass', 'cssmin', 'watch']);
     //grunt.registerTask('cleanall',  ['clean:all', 'copy:main']);
-    //grunt.registerTask('test', ['karma:development']);
+    
+    grunt.registerTask('test', ['karma:development']);
 
 };
